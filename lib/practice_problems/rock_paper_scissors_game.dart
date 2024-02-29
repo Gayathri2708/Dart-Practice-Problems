@@ -51,6 +51,7 @@ class RockPaperScissorsGame {
     return Move.values[random.nextInt(Move.values.length)];
   }
 
+  //Todo - Change the String to Enum
   String determineWinner(Move playerMove, Move computerMove) {
     if (playerMove == computerMove) {
       return "It's a tie";
