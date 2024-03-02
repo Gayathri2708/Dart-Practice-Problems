@@ -5,6 +5,7 @@ import 'dart:io';
 // Print out a message that tells how many years they have to be 100 years old.
 class Programs {
   void callProgram1() {
+    print("Program 1 :");
     stdout.write("What's your name?");
     String? name = stdin.readLineSync();
     if (name != null) {
@@ -27,6 +28,7 @@ class Programs {
 // Ask the user for a number.
 // Depending on whether the number is even or odd, print out an appropriate message to the user.
   void callProgram2() {
+    print("Program 2 :");
     stdout.write("Please enter a number");
     int num = int.parse(stdin.readLineSync()!);
 
@@ -42,6 +44,7 @@ class Programs {
 //   a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 // and write a program that prints out all the elements of the list that are less than 5.
   void callProgram3() {
+    print("Program 3 :");
     List<int> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
     print("Below numbers are less than five");
     for (var i in a) {
@@ -57,6 +60,7 @@ class Programs {
 // Create a program that asks the user for a number and
 // then prints out a list of all the divisors of that number.
   void callProgram4() {
+    print("Program 4 :");
     stdout.write("Enter a number");
     int a = int.parse(stdin.readLineSync()!);
     for (int i = 1; i <= a; i++) {
@@ -75,19 +79,30 @@ class Programs {
 //  and write a program that returns a list that contains only the elements that are common between them (without duplicates).
 //  Make sure your program works on two lists of different sizes.
   void callProgram5() {
+    print("Program 5 :");
     List<int> a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
     List<int> b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
-    Set<int> aSet = Set.from(a); // or Set<int> aSet = a.toSet();
-    Set<int> bSet = Set.from(b);
-    //Todo Change the User Defined Method instead of Pre-Defined Method
-    Set<int> commonElements = aSet.intersection(bSet);
-    print(commonElements.toList());
+    List<int> result = findCommonElements(a, b);
+    print('The common elements are:, ${result}');
+  }
+
+  List<int> findCommonElements(List<int> a, List<int> b) {
+    List<int> commonElements = [];
+
+    for (int element in a) {
+      if (b.contains(element) && !commonElements.contains(element)) {
+        commonElements.add(element);
+      }
+    }
+
+    return commonElements;
   }
 
 // Problem: 6
 // Ask the user for a string and print out whether this string is a palindrome or not.
   void callProgram6() {
+    print("Program 6 :");
     stdout.write("Enter the string");
     String input = stdin.readLineSync()!.toLowerCase();
     String revInput = input.split('').reversed.join('');
@@ -101,6 +116,7 @@ class Programs {
 // a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100].
 // Write a Dart code that takes this list and makes a new list that has only the even elements of this list in it.
   void callProgram7() {
+    print("Program 7 :");
     List<int> a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
     List<int> b = [];
     for (var i in a) {
